@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Image Change</title>
+    <link rel="stylesheet" href="./css/pro.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section id="header" class="header">
+        <a href="#" class="logo"><i class="fas fa-female"></i>beauty.</a>
+        <nav class="navbar">
+            <a href="./index.html">Home</a>
+            <a href="product.html">Shop</a>
+            
+            <a href="#footer">Contact us</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+        </div>
+    </section>
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="product-div">
+                <div class="product-div-left">
+                    <div class="img-container">
+                        <img src="./images/product1.png" alt="watch">
+                    </div>
+                    <div class="hover-container">
+                        <div><img src="./images/product2.png"></div>
+                        <div><img src="./images/product3.png"></div>
+                        <div><img src="./images/product4.png"></div>
+
+                    </div>
+                </div>
+                <div class="product-div-right">
+                    <span class="product-name">Veggan cream - (All skin types)</span>
+                    <span class="product-price">$ 50.25</span>
+                    <div class="product-rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star-half-alt"></i></span>
+                        <span>(350 ratings)</span>
+                    </div>
+                    <p class="product-description">Isseo's vegan makeup cleansing balm is a gentle and effective way to
+                        remove dirt, SPF, and even waterproof makeup without stripping your skin. This one-step balm
+                        cleanser leaves your face feeling smooth, moisturized, and squeaky clean.Isseo is committed to
+                        using sustainable and ethical ingredients in all of its products.
+
+                    </p>
+                    <div class="btn-groups">
+                        <button type="button" class="add-cart-btn"><i class="fas fa-shopping-cart"></i>add to
+                            cart</button>
+                        <button type="button" class="buy-now-btn"><i class="fas fa-wallet"></i>buy now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="index.html" class="link"><i class="fas fa-angle-right"></i> Home</a>
+                <a href="product.html" class="link"><i class="fas fa-angle-right"></i>Shop</a>
+                
+                <a href="#footer" class="link"><i class="fas fa-angle-right"></i>Contact us</a>
+            </div>
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#" class="link"><i class="fas fa-angle-right"></i>my favourite</a>
+                <a href="#" class="link"><i class="fas fa-angle-right"></i>my order</a>
+                <a href="#" class="link"><i class="fas fa-angle-right"></i>my wishlist</a>
+                <a href="#" class="link"><i class="fas fa-angle-right"></i>private policy</a>
+            </div>
+            <div class="box">
+                <h3>Contact info</h3>
+                <a href="#" class="link"><i class="fas fa-phone"> +111-222-3333</i></a>
+                <a href="#" class="link"><i class="fas fa-phone"> +123-456-7890</i></a>
+                <a href="#" class="link"><i class="fas fa-envelope"> beauty@gmail.com</i></a>
+                <a href="#" class="link"><i class="fas fa-map">   mumbai, india - 401203</i></a>
+                <div class="share">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="box">
+                <h3>newsletter</h3>
+                <p>subscribe for latest updates</p>
+                <form action="">
+                    <input type="email" name="" id="" class="email" placeholder="Email address">
+                    <input type="submit" value="subscribe" id="subscribe" class="btn">
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+
+        const allHoverImages = document.querySelectorAll('.hover-container div img');
+        const imgContainer = document.querySelector('.img-container');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            allHoverImages[0].parentElement.classList.add('active');
+        });
+
+        allHoverImages.forEach((image) => {
+            image.addEventListener('mouseover', () => {
+                imgContainer.querySelector('img').src = image.src;
+                resetActiveImg();
+                image.parentElement.classList.add('active');
+            });
+        });
+
+        function resetActiveImg() {
+            allHoverImages.forEach((img) => {
+                img.parentElement.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
